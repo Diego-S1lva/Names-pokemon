@@ -1,0 +1,30 @@
+.header{
+    background-color: white;
+    padding-left: 600px;
+    box-shadow: 4px 8px;
+}
+.header nav ul{
+    display: flex;
+    justify-content: flex-start;
+}
+.header nav{
+    padding: 12px;
+}
+.header nav li{
+    margin-right: 19px;
+    -webkit-text-fill-color: black;
+}
+   
+body{
+    background-color:#414141;
+  
+} 
+
+footer{
+    height: 150px;
+    background-color: blueviolet;
+    margin-top: auto;
+    border-top: 1px solid;
+    padding: 16px;
+}
+

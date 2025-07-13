@@ -1,0 +1,44 @@
+.cadastro{
+    text-align: center;
+    box-sizing: border-box;
+    color: white;
+    
+}
+
+.campos{
+    display: grid;
+    margin-top: 90px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    gap: 15px;
+}
+
+#input-name{
+    box-sizing: border-box;
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 400px;
+}
+#input-email{
+    box-sizing: border-box;
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 100%;
+}
+#input-password{
+    box-sizing: border-box;
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 100%;
+}
+#button-cadastrar{
+    width: 100px;
+    height: 40px;
+    background-color: #4172E5;
+    border-radius: 10px;
+    border-color: #4172E5;
+    border: groove;
+    color: white;
+    font-size: 15px;
+}
