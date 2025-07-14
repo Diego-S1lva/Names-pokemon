@@ -5,7 +5,7 @@ import './Nomes.modules.css';
 
 export default function Mostrarnomes(){
     const [pokemons, setPokemons] = useState([]);
-    const [letra, setLetra] = useState('');
+    const [termoDeBusca, setTermoDeBusca] = useState('');
     const [erro, setErro] = useState('');
         
 
@@ -13,14 +13,14 @@ export default function Mostrarnomes(){
     const envio = (event) =>{
         const{name, value} = event.target;
         if (name === 'letra') {
-            setLetra(value);
+            setTermoDeBusca(value);
         }
         console.log(event.target.value);
 
     }
     const aposEnvio =  async (event) =>{
         event.preventDefault();
-        if (!letra) {
+        if (!termoDeBusca) {
             setErro('Digite outra letra');
         }
         else{
@@ -29,10 +29,10 @@ export default function Mostrarnomes(){
         }
     const dadosDosPokemons = await getPokemons();
     const pokemonsFiltrados = dadosDosPokemons.filter(
-    d => d.name.charAt(0).toLowerCase() === letra.toLowerCase());
+    d => d.name.toLowerCase().includes(termoDeBusca.toLowerCase()));
 
     if (pokemonsFiltrados.length === 0) {
-        setErro(`Na lista não tem nenhum pokemon com essa letra, '${letra}'`);
+        setErro(`Na lista não tem nenhum pokemon com esse termo, '${termoDeBusca}'`);
     }
     else{
         setErro('');
@@ -44,7 +44,7 @@ export default function Mostrarnomes(){
         return(
             <div className="name">
             <form className="formletter" onSubmit={aposEnvio}>
-            <input className="inputletter" type="text" name="letra" value={letra} onChange={envio}/>
+            <input className="inputletter" type="text" name="letra" value={termoDeBusca} onChange={envio}/>
             <button className="button-54" type="Submit">Procurar</button>
             
             <label className="nomes">

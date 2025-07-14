@@ -1,6 +1,6 @@
 .name{
     display: flex;
-    padding:20px;
+    padding:20x;
     justify-content: center;
     align-items: center;
     box-shadow: 4px 8px 4px 8px;
@@ -8,7 +8,7 @@
 
 }
 .formletter{
-    display: flex; 
+  display: flex; 
   flex-direction: column; 
   align-items: center; 
   justify-content: center; 
@@ -20,8 +20,9 @@
     color: #ccc;
     font-size: 30px;
     text-decoration: none #ebebeb solid;
-    display: flex;
+    display:block;
     gap: 30px;
+    overflow: scroll;
 
 }
 
@@ -66,7 +67,8 @@
   text-align: center; 
   font-family: monospace;
   font-size: 1.5em;
-  padding: 0.1em;
+  padding: 5px;
+  width: 300px;
   box-sizing: border-box;
   border: 1px solid #ccc; 
   border-radius: 3px;
