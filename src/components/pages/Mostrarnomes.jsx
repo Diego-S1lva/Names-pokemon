@@ -15,7 +15,6 @@ export default function Mostrarnomes(){
         if (name === 'letra') {
             setTermoDeBusca(value);
         }
-        console.log(event.target.value);
 
     }
     const aposEnvio =  async (event) =>{
