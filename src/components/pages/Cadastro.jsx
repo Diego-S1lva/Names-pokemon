@@ -9,6 +9,13 @@ export default function Cadastro(){
     const [senha, setSenha] = useState("");
     const [erro, setErro] = useState("");
     const navigate = useNavigate();
+
+    const newUser = {
+        name: name,
+        email: email,
+        senha: senha
+    };
+
     const onChangeHandle = (event) => {
         const {name, value} = event.target;
         if (name === 'fullname') {
@@ -22,21 +29,39 @@ export default function Cadastro(){
         }
     }
    
-    const onSubmitHandle = (event) =>{
+    const onSubmitHandle = async (event) =>{
         event.preventDefault();
         if (!name || !email || !senha) {
             setErro('Campos não preenchidos');
         }
+        try{
+            const response = await fetch('http://localhost:3000/users',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newUser)
+            });
+            if (response.ok) {
+                const data = await response.json();
+                console.log(JSON.stringify(data.name));
+                setErro('');
+                setName('');
+                setEmail('');
+                setSenha('');
+                navigate('/mostrarnomes')
+            }
         else{
-            console.log('Dados salvos',{name, email, senha});
-            setErro('');
-            setName('');
-            setEmail('');
-            setSenha('');
-            navigate('/mostrarnomes')
+            const errorData = await response.json();
+            setErro(`Error ao cadastrar usuário: ${errorData.mesage || response.statusText}`)
         }
+    }
+        catch(erro){
+            setErro(`Erro de rede: ${erro.mesage}`)
+        
         
     }
+}
 
     return(
         <div className="cadastro">

@@ -11,6 +11,7 @@ import Mostrarnomes from "./Mostrarnomes";
 import './App.modules.css';
 import Nav from "./layouts/Nav";
 import Footer from "./layouts/Footer";
+import Login from "./Login";
 export default function AppPages(){
     return(
             <Router>
@@ -21,6 +22,7 @@ export default function AppPages(){
                     <Route path="/about" element={<About/>}/>
                     <Route path="/contacts" element={<Contacts/>}/>
                     <Route path="/mostrarnomes" element={<Mostrarnomes/>}/>
+                    <Route path="/login" element={<Login/>}/>
                 </Routes>
             </Router>
     )

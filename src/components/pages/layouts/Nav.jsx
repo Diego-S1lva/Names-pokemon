@@ -18,7 +18,7 @@ export default function Nav(){
                         <Link to='/contacts'>Contacts</Link>
                     </li>
                     <li>
-                        <Link to='/mostrarnomes'>Listar nomes</Link>
+                        <Link to={'/login'}>Login</Link>
                     </li>
 
                 </ul>
